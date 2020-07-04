@@ -6,6 +6,34 @@
 - `sudo systemctl enable nginx`
 - `sudo systemctl start nginx`
 
+- create folder named `sites-enabled` and `sites-available` in `/etc/nginx/`
+- then edit `/etc/nginx/nginx.conf` file and add `include /etc/nginx/sites-enabled/*;` inside `http` block
+
+- create a file named `default` in `/etc/nginx/`
+- and add these lines of code:
+```
+server {
+   listen 80 default_server;
+   listen [::]:80 default_server;
+   
+   root /var/www/html; <- your public www path
+   
+   index index.php index.html index.htm;
+   
+   server_name localhost;
+   
+   location / {
+    try_files $uri $uri/ =404;
+   }
+}
+```
+- command `server` block in `/etc/nginx/nginx.conf`
+- run `ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/`
+- run `systemctl restart nginx`
+
+- if there's an error, you can check the log via:
+  `tail -20 /var/log/nginx/error.log`
+
 
 #### Install nano editor
 
