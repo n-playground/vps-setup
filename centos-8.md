@@ -9,7 +9,7 @@
 - create folder named `sites-enabled` and `sites-available` in `/etc/nginx/`
 - then edit `/etc/nginx/nginx.conf` file and add `include /etc/nginx/sites-enabled/*;` inside `http` block
 
-- create a file named `default` in `/etc/nginx/`
+- create a file named `default` in `/etc/nginx/sites-available`
 - and add these lines of code:
 ```
 server {
@@ -28,7 +28,7 @@ server {
 }
 ```
 - command `server` block in `/etc/nginx/nginx.conf`
-- run `ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/`
+- run `ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/` <- this will copy `default` file to `/etc/nginx/sites-enabled`
 - run `systemctl restart nginx`
 
 - if there's an error, you can check the log via:
