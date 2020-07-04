@@ -17,7 +17,7 @@
 - Add new DNS record
 ```
 | Type  | Host          | Value                     |
-| A     | kamui.com     | -your server ip address-  |
+| A     | kamui.cyou    | -your server ip address-  |
 | A     | www           | -your server ip adress-   |
 ```
 
