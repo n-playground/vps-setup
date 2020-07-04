@@ -31,8 +31,7 @@ server {
 - run `ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/` <- this will copy `default` file to `/etc/nginx/sites-enabled`
 - run `systemctl restart nginx`
 
-- if there's an error, you can check the log via:
-  `tail -20 /var/log/nginx/error.log`
+if there's an error, you can check the log via: `tail -20 /var/log/nginx/error.log`
 
 
 #### Install nano editor
