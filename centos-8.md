@@ -7,7 +7,7 @@
 - `sudo systemctl start nginx`
 
 
-### Install nano editor
+#### Install nano editor
 
 - `yum install nano`
 
