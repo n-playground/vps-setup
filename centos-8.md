@@ -1,12 +1,12 @@
 - Access your server using VNC or SSH
 
-#### Change root password
+### Change root password
 
 - `sudo passwd root`
 
 <br>
 
-#### Install nginx webserver
+### Install nginx webserver
 
 - `sudo dnf install nginx`
 - `sudo systemctl enable nginx`
@@ -41,13 +41,13 @@ if there's an error, you can check the log via: `tail -20 /var/log/nginx/error.l
 
 <br>
 
-#### Install nano editor
+### Install nano editor
 
 - `yum install nano`
 
 <br>
 
-#### Connect a domain to VPS
+### Connect a domain to VPS
 
 - Add new DNS record
 ```
@@ -62,7 +62,7 @@ if dig command is not found, install it with `yum install bind-utils`
 
 <br>
 
-#### Setup FTP Server
+### Setup FTP Server
 
 - Install vsftpd with `sudo dnf install vsftpd`
 - `sudo systemctl enable vsftpd`
