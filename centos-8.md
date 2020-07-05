@@ -4,7 +4,6 @@
 
 - `sudo passwd root`
 
-<br>
 
 ### Install nginx webserver
 
@@ -39,13 +38,11 @@ server {
 
 if there's an error, you can check the log via: `tail -20 /var/log/nginx/error.log`
 
-<br>
 
 ### Install nano editor
 
 - `yum install nano`
 
-<br>
 
 ### Connect a domain to VPS
 
@@ -60,7 +57,6 @@ if there's an error, you can check the log via: `tail -20 /var/log/nginx/error.l
 
 if dig command is not found, install it with `yum install bind-utils`
 
-<br>
 
 ### Setup FTP Server
 
@@ -75,3 +71,9 @@ Add new user with
 Limit user's folder access:
 - add this line of code `chroot_local_user=YES` in the end of `/etc/vsftpd/vsftpd.conf`
 - then restart the service `systemctl restart vsftpd`
+
+
+### Network monitoring
+
+- `yum install iptraf`
+- then `iptraf-ng`
