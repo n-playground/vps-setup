@@ -5,6 +5,7 @@ Access your server using VNC or SSH
 $ sudo passwd root
 ```
 
+<hr>
 
 ### # Install net-tools
 ```
@@ -12,6 +13,7 @@ $ yum install net-tools
 $ netstat -tulpen | grep nginx
 ```
 
+<hr>
 
 ### # Install nginx webserver
 
@@ -48,11 +50,13 @@ server {
 
 if there's an error, you can check the log via: `$ sudo tail -20 /var/log/nginx/error.log`
 
+<hr>
 
 ### # Install nano editor
 
 - `$ sudo yum install nano`
 
+<hr>
 
 ### # Connect a domain to VPS
 
@@ -67,6 +71,7 @@ if there's an error, you can check the log via: `$ sudo tail -20 /var/log/nginx/
 
 if dig command is not found, install it with `$ yum install bind-utils`
 
+<hr>
 
 ### # Setup FTP Server
 
@@ -84,6 +89,7 @@ Limit user's folder access:
 - add this line of code `chroot_local_user=YES` in the end of `/etc/vsftpd/vsftpd.conf`
 - then restart the service `$ sudo systemctl restart vsftpd`
 
+<hr>
 
 ### # Network monitoring
 
@@ -92,6 +98,7 @@ $ sudo yum install iptraf
 $ sudo iptraf-ng
 ```
 
+<hr>
 
 ### # Install MariaDB
 
@@ -123,6 +130,7 @@ MariaDB [(none)]> exit
 ```
 - Try connect with created user `$ mysql -u admin -p` and enter the password
 
+<hr>
 
 ### # Change MariaDB port
 - Edit file `/etc/my.cnf.d/mariadb-server.cnf` and add this line of code under `[mysqld]` block
@@ -132,6 +140,7 @@ port = 3307
 then restart the service `$ sudo systemctl restart mariadb`
 and you can check the port changed with `$ netstat -tlpn | grep mysql`
 
+<hr>
 
 ### # Install phpMyAdmin
 
@@ -155,11 +164,12 @@ $ sudo systemctl restart php-fpm
 
 and now you can access phpmyadmin in the browser via `http://YOUR_SERVER_IP/phpMyAdmin` (camel-case sensitive, if you folder name `phpmyadmin` then open `http://YOUR_SERVER_IP/phpmyadmin`)
 
+<hr>
 
 ### # Install PHP
 
 ```
-$ dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+$ sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 ```
 
 Confirm the presence of the EPEL repository
