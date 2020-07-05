@@ -119,17 +119,17 @@ $ sudo yum install phpmyadmin
 
 ### Install PHP
 
-`$ dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm`
+- `$ dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm`
 
 Confirm the presence of the EPEL repository
-`$ rpm -qa | grep epel`
+- `$ rpm -qa | grep epel`
 
-`$ dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm`
+- `$ dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm`
 
 Verify the existence of the Remi repository
-`$ rpm -qa | grep remi`
+- `$ rpm -qa | grep remi`
 
-`$ dnf module list php`
-`$ dnf module enable php:remi-7.4`
-`$ dnf install php php-cli php-common`
-`$ php -v`
+- `$ dnf module list php`
+- `$ dnf module enable php:remi-7.4`
+- `$ dnf install php php-cli php-common`
+- `$ php -v`
