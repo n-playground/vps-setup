@@ -1,11 +1,11 @@
 Access your server using VNC or SSH
 
-### Change root password
+### # Change root password
 
 - `$ sudo passwd root`
 
 
-### Install nginx webserver
+### # Install nginx webserver
 
 ```
 $ sudo dnf install nginx
@@ -41,12 +41,12 @@ server {
 if there's an error, you can check the log via: `tail -20 /var/log/nginx/error.log`
 
 
-### Install nano editor
+### # Install nano editor
 
 - `$ sudo yum install nano`
 
 
-### Connect a domain to VPS
+### # Connect a domain to VPS
 
 - Add new DNS record
 ```
@@ -60,7 +60,7 @@ if there's an error, you can check the log via: `tail -20 /var/log/nginx/error.l
 if dig command is not found, install it with `$ yum install bind-utils`
 
 
-### Setup FTP Server
+### # Setup FTP Server
 
 - Install vsftpd with `$ sudo dnf install vsftpd`
 - `$ sudo systemctl enable vsftpd`
@@ -77,7 +77,7 @@ Limit user's folder access:
 - then restart the service `$ sudo systemctl restart vsftpd`
 
 
-### Network monitoring
+### # Network monitoring
 
 ```
 $ sudo yum install iptraf
@@ -85,7 +85,7 @@ $ sudo iptraf-ng
 ```
 
 
-### Install MariaDB
+### # Install MariaDB
 
 ```
 $ sudo yum install mariadb-server mariadb
@@ -116,7 +116,7 @@ MariaDB [(none)]> exit
 - Try connect with created user `mysql -u admin -p` and enter the password
 
 
-### Install phpMyAdmin
+### # Install phpMyAdmin
 
 ```
 $ sudo yum install epel-release
@@ -125,7 +125,7 @@ $ sudo yum update
 $ sudo yum install phpmyadmin
 ```
 
-### Install PHP
+### # Install PHP
 
 ```
 $ dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
