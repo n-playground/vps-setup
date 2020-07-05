@@ -60,7 +60,7 @@ if there's an error, you can check the log via: `$ sudo tail -20 /var/log/nginx/
 ```
 | Type  | Host          | Value                     |
 | A     | kamui.cyou    | -your server ip address-  |
-| A     | www           | -your server ip adress-   |
+| A     | www           | -your server ip address-  |
 ```
 
 - run `$ dig A +short www.kamui.cyou`
@@ -139,8 +139,22 @@ and you can check the port changed with `$ netstat -tlpn | grep mysql`
 $ sudo yum install epel-release
 $ rpm -iUvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 $ sudo yum update
-$ sudo yum install phpmyadmin
+$ sudo yum install phpMyAdmin
 ```
+
+if installation failed with this error message `unable to find a match: phpMyAdmin`, run this command:
+```
+$ yum --enablerepo=remi install phpMyAdmin
+```
+
+then
+```
+$ sudo ln -s /usr/share/phpMyAdmin /var/www/html <- your public www path
+$ sudo systemctl restart php-fpm
+```
+
+and now you can access phpmyadmin in the browser via `http://YOUR_SERVER_IP/phpMyAdmin` (camel-case sensitive, if you folder name `phpmyadmin` then open `http://YOUR_SERVER_IP/phpmyadmin`)
+
 
 ### # Install PHP
 
