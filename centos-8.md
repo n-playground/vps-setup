@@ -1,6 +1,6 @@
 - Access your server using VNC or SSH
 
-### Change root password
+#### Change root password
 
 - `sudo passwd root`
 
