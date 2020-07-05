@@ -166,6 +166,38 @@ and now you can access phpmyadmin in the browser via `http://YOUR_SERVER_IP/phpM
 
 <hr>
 
+### # Set Up an Nginx Authentication Gateway/Securing your phpMyAdmin page
+
+This will show an authentication prompt that a user would be required to pass before ever seeing the phpMyAdmin login screen.
+First thing first, you need to create an encrypted password, the encryption is using `crypt()`, you can use an crypt generator.
+Then type `$ openssl passwd`, and enter your un-encrypted password.
+
+Then, create an authentication file `$ sudo nano /etc/nginx/pma_pass`, and type your credential inside that file, for example:
+```
+username:the-unencrypted-password
+dev:dev-password
+```
+
+Then add new location block inside `default` Nginx configuration.
+```
+$ sudo nano /etc/nginx/sites-available/default
+```
+
+and add these line of code
+```
+location /phpmyadmin {
+   auth_basic "Promp Alert";
+   auth_basic_user_file /etc/nginx/pma_pass;
+}
+```
+```
+$ sudo rm /etc/nginx/sites-enabled/default && ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+$ sudo systemctl restart nginx
+```
+and try opening your phpMyAdmin via browser, it will show an authentication prompt before entering the actual phpMyAdmin page.
+
+<hr>
+
 ### # Install PHP
 
 ```
