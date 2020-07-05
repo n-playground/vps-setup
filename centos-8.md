@@ -92,6 +92,7 @@ Creating a new user
 - `mysql -u root -p` and enter the password
 - `MariaDB [(none)]> CREATE USER 'username'@'localhsot' IDENTIFIED BY 'the_password';`
 - `MariaDB [(none)]> GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' WITH GRANT OPTION;`
+
 to access outside localhost:
 - `MariaDB [(none)]> CREATE USER 'username'@'%' IDENTIFIED BY 'the_password';`
 - `MariaDB [(none)]> GRANT ALL PRIVILEGES ON *.* TO 'username'@'%' WITH GRANT OPTION;`
