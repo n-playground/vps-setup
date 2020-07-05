@@ -145,8 +145,44 @@ Verify the existence of the Remi repository
 $ rpm -qa | grep remi
 ```
 ```
-$ dnf module list php
-$ dnf module enable php:remi-7.4
-$ dnf install php php-cli php-common
-$ php -v
+$ yum module list php
+$ yum module enable php:remi-7.4
+$ yum install php php-cli php-common
+$ systemctl enable --now php-fpm
 ```
+
+Configuring PHP to work with Nginx
+```
+$ sudo nano /etc/php-fpm.d/www.conf
+```
+
+Find and change this line
+```
+user = nginx
+group = nginx
+```
+
+Make sure the `/var/lib/php` directory has the correct ownership
+```
+$ chown -R root:nginx /var/lib/php
+```
+
+then restart the PHP FPM service `$ sudo systemctl restart php-fpm`
+
+Now edit the Nginx virtual host directive, and add the following location block so that Nginx can process PHP files
+```
+server {
+
+    # . . . other code
+
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_pass unix:/run/php-fpm/www.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+}
+```
+
+then, restart the Nginx service `$ sudo systemctl restart nginx`
