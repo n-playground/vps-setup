@@ -258,4 +258,14 @@ server {
 }
 ```
 
-then, restart the Nginx service `$ sudo systemctl restart nginx`
+then, restart the Nginx service `$ sudo systemctl restart nginx`'
+
+<hr>
+
+### # Install Composer PHP Package Manager
+
+```
+$ sudo yum install php-cli php-zip wget unzip
+$ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+$ sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+```
