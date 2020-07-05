@@ -127,7 +127,9 @@ Confirm the presence of the EPEL repository
 - `$ dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm`
 
 Verify the existence of the Remi repository
-- `$ rpm -qa | grep remi`
+```
+$ rpm -qa | grep remi
+```
 
 - `$ dnf module list php`
 - `$ dnf module enable php:remi-7.4`
