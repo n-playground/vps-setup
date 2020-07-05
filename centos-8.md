@@ -77,3 +77,20 @@ Limit user's folder access:
 
 - `yum install iptraf`
 - then `iptraf-ng`
+
+
+### Install MariaDB
+
+- `sudo yum install mariadb-server mariadb`
+- `sudo systemctl start mariadb`
+
+Reconfigure MariaDB
+- `sudo mysql_secure_installation`
+- follow the steps
+
+Creating a new user 
+- `mysql -u root -p` and enter the password
+- `MariaDB [(none)]> GRANT ALL ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'the_password';`
+- `MariaDB [(none)]> FLUSH PRIVILEGES;`
+- `MariaDB [(none)]> exit`
+- Try connect with created user `mysql -u admin -p` and enter the password
