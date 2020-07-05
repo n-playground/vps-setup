@@ -124,6 +124,15 @@ MariaDB [(none)]> exit
 - Try connect with created user `$ mysql -u admin -p` and enter the password
 
 
+### # Change MariaDB port
+- Edit file `/etc/my.cnf.d/mariadb-server.cnf` and add this line of code under `[mysqld]` block
+```
+port = 3307
+```
+then restart the service `$ sudo systemctl restart mariadb`
+and you can check the port changed with `$ netstat -tlpn | grep mysql`
+
+
 ### # Install phpMyAdmin
 
 ```
