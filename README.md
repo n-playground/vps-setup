@@ -1,1 +1,1 @@
-Belajar setup & maintenance VPN
+Belajar setup & maintenance server
