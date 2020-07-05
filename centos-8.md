@@ -67,7 +67,9 @@ if dig command is not found, install it with `$ yum install bind-utils`
 - check the status with `$ sudo systemctl statuc vsftpd`
 
 Add new user with 
-- `$ sudo adduser dev`
+```
+$ sudo adduser dev
+```
 - then change the password `sudo passwd dev`
 
 Limit user's folder access:
@@ -91,20 +93,26 @@ $ sudo systemctl start mariadb
 ```
 
 Reconfigure MariaDB
-- `$ sudo mysql_secure_installation`
+```
+$ sudo mysql_secure_installation
+```
 - follow the steps
 
 Creating a new user 
-- `$ mysql -u root -p` and enter the password
-- `MariaDB [(none)]> CREATE USER 'username'@'localhsot' IDENTIFIED BY 'the_password';`
-- `MariaDB [(none)]> GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' WITH GRANT OPTION;`
+```
+$ mysql -u root -p` and enter the password
+MariaDB [(none)]> CREATE USER 'username'@'localhsot' IDENTIFIED BY 'the_password';
+MariaDB [(none)]> GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' WITH GRANT OPTION;
+```
 
 to access outside localhost:
-- `MariaDB [(none)]> CREATE USER 'username'@'%' IDENTIFIED BY 'the_password';`
-- `MariaDB [(none)]> GRANT ALL PRIVILEGES ON *.* TO 'username'@'%' WITH GRANT OPTION;`
+```
+MariaDB [(none)]> CREATE USER 'username'@'%' IDENTIFIED BY 'the_password';
+MariaDB [(none)]> GRANT ALL PRIVILEGES ON *.* TO 'username'@'%' WITH GRANT OPTION;
 
-- `MariaDB [(none)]> FLUSH PRIVILEGES;`
-- `MariaDB [(none)]> exit`
+MariaDB [(none)]> FLUSH PRIVILEGES;
+MariaDB [(none)]> exit
+```
 - Try connect with created user `mysql -u admin -p` and enter the password
 
 
@@ -119,19 +127,26 @@ $ sudo yum install phpmyadmin
 
 ### Install PHP
 
-- `$ dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm`
+```
+$ dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+```
 
 Confirm the presence of the EPEL repository
-- `$ rpm -qa | grep epel`
+```
+$ rpm -qa | grep epel
+```
 
-- `$ dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm`
+```
+$ dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+```
 
 Verify the existence of the Remi repository
 ```
 $ rpm -qa | grep remi
 ```
-
-- `$ dnf module list php`
-- `$ dnf module enable php:remi-7.4`
-- `$ dnf install php php-cli php-common`
-- `$ php -v`
+```
+$ dnf module list php
+$ dnf module enable php:remi-7.4
+$ dnf install php php-cli php-common
+$ php -v
+```
