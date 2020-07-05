@@ -56,3 +56,17 @@ if there's an error, you can check the log via: `tail -20 /var/log/nginx/error.l
 - run `dig A +short www.kamui.cyou`
 
 if dig command is not found, install it with `yum install bind-utils`
+
+
+#### Setup FTP Server
+
+- Install vsftpd with `sudo dnf install vsftpd`
+- `sudo systemctl enable vsftpd`
+- check the status with `sudo systemctl statuc vsftpd`
+
+- Add new user with `sudo adduser dev`
+- `sudo passwd dev`
+
+- Limit user's folder access:
+- add this line of code `chroot_local_user=YES` in the end of `/etc/vsftpd/vsftpd.conf`
+- then restart the service `systemctl restart vsftpd`
