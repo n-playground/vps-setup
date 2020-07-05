@@ -4,6 +4,7 @@
 
 - `sudo passwd root`
 
+<br><br>
 
 > #### Install nginx webserver
 
@@ -38,11 +39,13 @@ server {
 
 if there's an error, you can check the log via: `tail -20 /var/log/nginx/error.log`
 
+<br><br>
 
 > #### Install nano editor
 
 - `yum install nano`
 
+<br><br>
 
 > #### Connect a domain to VPS
 
@@ -57,6 +60,7 @@ if there's an error, you can check the log via: `tail -20 /var/log/nginx/error.l
 
 if dig command is not found, install it with `yum install bind-utils`
 
+<br><br>
 
 > #### Setup FTP Server
 
