@@ -1,5 +1,10 @@
 - Access your server using VNC or SSH
 
+### Change root password
+
+- `sudo passwd root`
+
+
 #### Install nginx webserver
 
 - `sudo dnf install nginx`
