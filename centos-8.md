@@ -174,7 +174,7 @@ Then type `$ openssl passwd`, and enter your un-encrypted password.
 
 Then, create an authentication file `$ sudo nano /etc/nginx/pma_pass`, and type your credential inside that file, for example:
 ```
-username:the-unencrypted-password
+username:the-encrypted-password
 dev:dev-password
 ```
 
