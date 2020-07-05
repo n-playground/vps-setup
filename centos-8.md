@@ -1,8 +1,16 @@
 Access your server using VNC or SSH
 
 ### # Change root password
+```
+$ sudo passwd root
+```
 
-- `$ sudo passwd root`
+
+### # Install net-tools
+```
+$ yum install net-tools
+$ netstat -tulpen | grep nginx
+```
 
 
 ### # Install nginx webserver
@@ -38,7 +46,7 @@ server {
 - run `$ sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/` <- this will copy `default` file to `/etc/nginx/sites-enabled`
 - run `$ sudo systemctl restart nginx`
 
-if there's an error, you can check the log via: `tail -20 /var/log/nginx/error.log`
+if there's an error, you can check the log via: `$ sudo tail -20 /var/log/nginx/error.log`
 
 
 ### # Install nano editor
@@ -70,7 +78,7 @@ Add new user with
 ```
 $ sudo adduser dev
 ```
-- then change the password `sudo passwd dev`
+- then change the password `$ sudo passwd dev`
 
 Limit user's folder access:
 - add this line of code `chroot_local_user=YES` in the end of `/etc/vsftpd/vsftpd.conf`
@@ -113,7 +121,7 @@ MariaDB [(none)]> GRANT ALL PRIVILEGES ON *.* TO 'username'@'%' WITH GRANT OPTIO
 MariaDB [(none)]> FLUSH PRIVILEGES;
 MariaDB [(none)]> exit
 ```
-- Try connect with created user `mysql -u admin -p` and enter the password
+- Try connect with created user `$ mysql -u admin -p` and enter the password
 
 
 ### # Install phpMyAdmin
