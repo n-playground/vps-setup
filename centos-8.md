@@ -78,6 +78,19 @@ server_name domain-two.com www.domain-two.com;
 server_name sub.domain.com www.sub.domain.com;
 ```
 
+### # Point domain name to port
+
+```
+location / {
+   proxy_pass http://localhost:port;
+   proxy_http_version 1.1;
+   proxy_set_header Upgrade $http_upgrade;
+   proxy_set_header Connection 'upgrade';
+   proxy_set_header Host $host;
+   proxy_cache_bypass $http_upgrade;
+}
+```
+
 <hr>
 
 ### # Install nano editor
