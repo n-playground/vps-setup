@@ -52,6 +52,34 @@ if there's an error, you can check the log via: `$ sudo tail -20 /var/log/nginx/
 
 <hr>
 
+### # Multiple Domain on the same VPS
+
+- create a new domain block, just like the default copy everything in there and change the server_name value to the domains:
+```
+# domain-one.com
+listen 80;
+listen [::]:80;
+
+server_name domain-one.com www.domain-one.com;
+
+# domain-two.com
+listen 80;
+listen [::]:80;
+
+server_name domain-two.com www.domain-two.com;
+```
+
+<hr>
+
+### # Sub-domain config
+
+- just change the `server_name` value to the subdomain link
+```
+server_name sub.domain.com www.sub.domain.com;
+```
+
+<hr>
+
 ### # Install nano editor
 
 - `$ sudo yum install nano`
