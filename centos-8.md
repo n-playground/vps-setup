@@ -78,6 +78,8 @@ server_name domain-two.com www.domain-two.com;
 server_name sub.domain.com www.sub.domain.com;
 ```
 
+<hr>
+
 ### # Point domain name to port
 
 ```
